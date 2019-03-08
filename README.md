@@ -2,9 +2,9 @@ This is a project which exists to repro an issue with running JUnit tests with G
 
 
 
-Observed behavior - The tests stop running and the build is successful after the first System.exit(0) call is reached.
+Observed behavior - The tests stop running and the build is successful after the first System.exit(0) call is reached. In this example we're missing tests from other test classes.
 ```
-❯ ./gradlew cleanTest test
+❯ ./gradlew test
 
 > Task :test
 
@@ -18,4 +18,4 @@ BUILD SUCCESSFUL in 1s
 ```
 
 
-Ideal behavior -- All tests execute or an error is raised failing the build when System.exit is called
+Ideal behavior - All tests execute or an error is raised failing the build when System.exit is called
